@@ -50,4 +50,5 @@ The more the frequency of apparition is higher, the less his code's size is long
 To encode the data you have just to replace each by his code.
 You can obviously calculate the encoded data size without encode them.
 Of course, here is the simple formula:
-![Formula](https://latex.codecogs.com/png.download?%5Cbg_white%20%5Cfn_cm%20EncodedSize%3D%5Csum_%7Bc%20%5Cin%20tree%7D%7BFreq%28c%29%20%5Ctimes%20SizeOf%28CodeOf%28c%29%29%29%7D)
+
+![Formula](https://i.imgur.com/iX3sTRZ.jpg)
