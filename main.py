@@ -24,9 +24,11 @@ class Node(object):
         return (self._weight, self._random) < (other._weight, other._random)
 
 def calcFreq(bytes):
+    # We calculate the frequency of each byte
     return [(code, count) for code, count in dict(collections.Counter(bytes)).items()]
 
 def encode(freq):
+    # We make the tree and the nodes
     data = [Node(x[0], x[1]) for x in freq]
     heapq.heapify(data)
 
@@ -42,6 +44,7 @@ def encode(freq):
     return data
 
 def traverseTree(root, code, keycode):
+    # We get the codes
     if len(root._children) == 0:
         keycode[root._key] = code
         return
@@ -49,12 +52,14 @@ def traverseTree(root, code, keycode):
     traverseTree(root._children[1], code+'1', keycode)
 
 def getCodes(tree):
+    # It returns the codes of each byte
     code = ""
     keycode = dict()
     traverseTree(tree[0], code, keycode)
     return keycode
 
 def encodeData(data, codes):
+    # It replaces each byte by his code
     result = ""
     for c in data:
         if c not in codes.keys():
